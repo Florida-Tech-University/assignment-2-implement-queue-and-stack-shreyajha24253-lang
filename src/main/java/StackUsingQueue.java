@@ -32,13 +32,15 @@ public class StackUsingQueue<E> implements StackADT<E> {
         // TODO:
         // 1) q.enqueue(e)
         q.enqueue(e);
+        
         // 2) rotate (size-1) times:
-        for (int= 0; i< q.size() - 1; i++) {
+        //    q.enqueue(q.dequeue());
+        // so the newest element becomes the front of the queue.
+        int rotationCount = q.size() -1;
+        for (int i = 0; i< rotationCount; i++) {
             q.enqueue(q.dequeue());
         }
     } 
-        //    q.enqueue(q.dequeue());
-        // so the newest element becomes the front of the queue.
 
     @Override
     public E pop() {
